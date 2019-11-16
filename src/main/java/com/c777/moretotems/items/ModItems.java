@@ -27,6 +27,7 @@ public class ModItems {
     // End registry helpers
 
     @ObjectHolder(LibItems.IRON_GOLEM_TOTEM) public static Item ironGolemTotem;
+    @ObjectHolder(LibItems.WITHER_TOTEM) public static Item witherTotem;
 
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event) {
@@ -35,6 +36,7 @@ public class ModItems {
         Item.Properties unstackable = new Item.Properties().group(MoreTotemsCreativeTab.INSTANCE).maxStackSize(1);
 
         register(r, new IronGolemTotemItem(unstackable), LibItems.IRON_GOLEM_TOTEM);
+        register(r, new WitherTotemItem(unstackable), LibItems.WITHER_TOTEM);
     }
 
 }
