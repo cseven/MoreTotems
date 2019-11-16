@@ -28,6 +28,7 @@ public class ModItems {
 
     @ObjectHolder(LibItems.IRON_GOLEM_TOTEM) public static Item ironGolemTotem;
     @ObjectHolder(LibItems.WITHER_TOTEM) public static Item witherTotem;
+    @ObjectHolder(LibItems.BAT_TOTEM) public static Item batTotem;
 
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event) {
@@ -37,6 +38,7 @@ public class ModItems {
 
         register(r, new IronGolemTotemItem(unstackable), LibItems.IRON_GOLEM_TOTEM);
         register(r, new WitherTotemItem(unstackable), LibItems.WITHER_TOTEM);
+        register(r, new BatTotemItem(unstackable), LibItems.BAT_TOTEM);
     }
 
 }

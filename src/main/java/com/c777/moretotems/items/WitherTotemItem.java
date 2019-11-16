@@ -17,13 +17,13 @@ public class WitherTotemItem extends TotemItem {
 
     @Override
     public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
-        if(!(entityIn instanceof PlayerEntity))
+        if(!isActive(stack, entityIn))
             return;
 
         PlayerEntity player = (PlayerEntity)entityIn;
         if(player.isPotionActive(Effects.WITHER)) {
             player.removePotionEffect(Effects.WITHER);
-            stack.damageItem(1, player, e -> e.sendBreakAnimation(Hand.OFF_HAND));
+            damageTotem(stack, player);
         }
     }
 }

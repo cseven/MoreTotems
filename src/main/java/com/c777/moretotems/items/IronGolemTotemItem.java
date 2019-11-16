@@ -6,7 +6,6 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Hand;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -37,7 +36,7 @@ public class IronGolemTotemItem extends TotemItem {
     public static void onPlayerAttack(AttackEntityEvent event) {
         PlayerEntity player = event.getPlayer();
         if(player.getHeldItemOffhand().getItem() instanceof IronGolemTotemItem) {
-            player.getHeldItemOffhand().damageItem(1, player, e -> e.sendBreakAnimation(Hand.OFF_HAND));
+            damageTotem(player.getHeldItemOffhand(), player);
         }
     }
 
